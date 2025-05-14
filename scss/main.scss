@@ -1,6 +1,7 @@
-@import 'config';
-@import 'utilities';
-@import 'item_grid';
+@use "sass:meta";
+@use 'config';
+@use 'utilities';
+@use 'item_grid';
 
 // General Styles
 * {
@@ -16,7 +17,7 @@ body {
 
 a {
   text-decoration: none;
-  color: $dark-color;
+  color: config.$dark-color;
 }
 
 ul {
@@ -62,11 +63,11 @@ img {
     transition: border-color 0.5s;
 
     &:hover {
-      border-color: $medium-color;
+      border-color: config.$medium-color;
     }
 
     &.current {
-      border-color: $main-color;
+      border-color: config.$main-color;
     }
   }
 }
@@ -75,7 +76,7 @@ img {
 #header {
   // Header Home
   &-home {
-    background: $bg-image no-repeat center right / cover;
+    background: config.$bg-image no-repeat center right / cover;
     height: 100vh;
     color: #fff;
 
@@ -93,9 +94,9 @@ img {
 
   // Header Inner Pages
   &-inner {
-    background: $bg-image no-repeat 20% 30% / cover;
+    background: config.$bg-image no-repeat 20% 30% / cover;
     height: 5.5rem;
-    border-bottom: 3px solid $main-color;
+    border-bottom: 3px solid config.$main-color;
   }
 }
 
@@ -110,7 +111,7 @@ img {
       grid-template-columns: repeat(4, 1fr);
 
       .fas {
-        color: $main-color;
+        color: config.$main-color;
         padding-bottom: 0.4rem;
       }
     }
@@ -139,11 +140,11 @@ img {
         padding: 3rem 0;
 
         &:nth-child(odd) {
-          background-color: $light-color;
+          background-color: config.$light-color;
         }
 
         &:nth-child(even) {
-          background-color: $medium-color;
+          background-color: config.$medium-color;
         }
       }
     }
@@ -160,8 +161,8 @@ img {
       // .process-icon
       &-icon {
         border-radius: 50%;
-        background-color: $dark-color;
-        color: set-text-color($dark-color);
+        background-color: config.$dark-color;
+        color: config.set-text-color(config.$dark-color);
         padding: 2rem;
         width: 70px;
         height: 70px;
@@ -171,14 +172,14 @@ img {
         transition: all 1s;
 
         &:hover {
-          background-color: $main-color;
+          background-color: config.$main-color;
           width: 90px;
           height: 90px;
           line-height: 90px;
 
           .process-step {
-            background-color: $dark-color;
-            color: set-text-color($dark-color);
+            background-color: config.$dark-color;
+            color: config.set-text-color(config.$dark-color);
           }
         }
       }
@@ -189,8 +190,8 @@ img {
         top: 0;
         right: 0;
         font-size: 28px;
-        background-color: $main-color;
-        color: set-text-color($main-color);
+        background-color: config.$main-color;
+        color: config.set-text-color(config.$main-color);
         border-radius: 50%;
         height: 15px;
         width: 15px;
@@ -221,7 +222,7 @@ img {
 
     .bio {
       grid-area: bio;
-      border-left: 3px solid $main-color;
+      border-left: 3px solid config.$main-color;
       padding: 0.8rem;
     }
 
@@ -240,7 +241,7 @@ img {
     .award-1 .fas,
     .award-2 .fas,
     .award-3 .fas {
-      color: $main-color;
+      color: config.$main-color;
       margin: 1rem;
     }
   }
@@ -250,7 +251,7 @@ img {
     .progress {
       overflow: hidden;
       height: 20px;
-      background-color: $medium-color;
+      background-color: config.$medium-color;
       border-radius: 5px;
       margin-bottom: 0.6rem;
 
@@ -258,7 +259,7 @@ img {
         height: 100%;
         color: #fff;
         text-align: center;
-        background-color: $main-color;
+        background-color: config.$main-color;
       }
     }
   }
@@ -291,7 +292,7 @@ img {
       }
 
       p {
-        border: 1px solid $medium-color;
+        border: 1px solid config.$medium-color;
         border-radius: 5px;
         padding: 0.5rem;
       }
@@ -371,7 +372,7 @@ img {
 
 // Footer
 #main-footer {
-  background-color: $dark-color;
+  background-color: config.$dark-color;
   color: #fff;
   height: 5rem;
 
@@ -392,11 +393,11 @@ img {
       padding: 0.5rem;
 
       &:hover {
-        background-color: $main-color;
+        background-color: config.$main-color;
       }
     }
   }
 }
 
 // Import Media Queries
-@import 'media';
+@include meta.load-css('media');

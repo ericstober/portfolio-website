@@ -31,7 +31,3 @@ npm run sass
 ```
 
 Visit http://localhost:3000
-
-## License
-
-This project us licensed under the MIT License.
